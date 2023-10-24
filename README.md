@@ -24,9 +24,12 @@ Orders:
     -Retrieve the details of a specific order.
 
 
-Starting Guide
 
-php artisan db:seed --class=MySeeders
+## Starting Guide
+
+  Before start and perform the API's, please make sure run the seeders for the product list demo records.
+
+  -php artisan db:seed --class=MySeeders
 
 
 ## API Reference
@@ -102,3 +105,27 @@ Authorization  :-  Bearer Token | **** | **Required** |
 | :-------- | :------- | :-------------------------------- |
 Authorization  :-  Bearer Token | **** | **Required** |
 | `id`      | `integer` | **Required** |
+
+
+
+#### Add to Cart
+```http
+  GET /api/auth/product/to-cart
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+Authorization  :-  Bearer Token | **** | **Required** |
+| `product_id`      | `integer` | **Required** |
+
+
+
+#### Remove from Cart
+```http
+  GET /api/auth/product/remove
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+Authorization  :-  Bearer Token | **** | **Required** |
+| `product_id`      | `integer` | **Required** |
