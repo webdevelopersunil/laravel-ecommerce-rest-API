@@ -4,6 +4,8 @@
 Rest API Laravel, A simple Shopping API's
 
 
+php artisan db:seed --class=MySeeders
+
 
 ## Features
 
