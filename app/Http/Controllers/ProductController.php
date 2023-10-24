@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Auth;
 use App\Models\Cart;
+use App\Models\CartItem;
 
 class ProductController extends Controller
 {
@@ -27,5 +28,15 @@ class ProductController extends Controller
         return response()->json([
             'message' => "Success :: Added to the cart"
         ]);
+    }
+
+    public function removeFromCart(Request $request){
+        
+        (new CartItem)->removeFromCart(Auth::user(), $request->product_id);
+
+        return response()->json([
+            'message' => "Success :: Removed from the cart."
+        ]);
+
     }
 }

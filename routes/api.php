@@ -34,5 +34,6 @@ Route::group([ 'middleware' => 'api', 'prefix' => 'auth' ],
         Route::get('/products', [ProductController::class, 'index']);
         Route::get('/product/{id}', [ProductController::class, 'getDetail']);
         Route::post('/product/to-cart', [ProductController::class, 'addToCart']);
+        Route::post('/product/remove', [ProductController::class, 'removeFromCart']);
     }
 );

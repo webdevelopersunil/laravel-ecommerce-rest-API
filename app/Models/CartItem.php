@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Product;
+use App\Models\Cart;
 use DB;
 
 class CartItem extends Model
@@ -61,6 +62,15 @@ class CartItem extends Model
                 'active' => 1
             ]);
         }
+
+        return true;
+    }
+
+    public function removeFromCart($user, $product_id){
+
+        $cart = Cart::where(['user_id'=>$user->id, "status"=> 1])->first();
+        
+        self::where('cart_id',$cart->id)->where('product_id', $product_id)->delete();
 
         return true;
     }
