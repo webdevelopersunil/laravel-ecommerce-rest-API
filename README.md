@@ -3,10 +3,6 @@
 
 Rest API Laravel, A simple Shopping API's
 
-
-php artisan db:seed --class=MySeeders
-
-
 ## Features
 
 Products:
@@ -28,6 +24,9 @@ Orders:
     -Retrieve the details of a specific order.
 
 
+Starting Guide
+
+php artisan db:seed --class=MySeeders
 
 
 ## API Reference
@@ -82,3 +81,24 @@ Authorization  :-  Bearer Token | **** | **Required** |
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id of item to fetch |
+
+
+#### Get Products List
+```http
+  GET /api/auth/products
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+Authorization  :-  Bearer Token | **** | **Required** |
+
+
+#### Get Product Detail
+```http
+  GET /api/auth/product/{id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+Authorization  :-  Bearer Token | **** | **Required** |
+| `id`      | `integer` | **Required** |
